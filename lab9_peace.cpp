@@ -120,8 +120,74 @@ for(int row=1; row<=plot_size; row++){
 
 }
 
-cout<<"\n--------------------Lab exercise---------------------"<<endl;
+cout<<"\n--------------------Lab exercise 1---------------------"<<endl;
 
+/*
+Lab Exercise A:
+Create a number-guessing game where the user guesses a number between 1 and 10. The program should:
+
+    Validate that the entered number is within the range [1, 10]. If not, prompt the user to re-enter a valid number.
+    Provide feedback on whether the guessed number is too high, too low, or correct.
+    Continue until the user guesses the correct number.
+
+Hint:
+
+    Use a constant variable named GUESS to store the correct number.
+    For example, if GUESS is set to 5:
+        If the user enters 7, display: "The entered number is high."
+        If the user enters 3, display: "The entered number is low."
+
+
+*/
+
+int guess = 5;
+int num;
+
+cout<<"Take a guess! Enter a number: ";
+cin>>num;
+do{
+    if(num >= 1 && num <= 4){
+        cout<<"The entered number is low. Try again!\n"<<endl;
+        cout<<"Take a guess! Enter a number: ";
+        cin>>num; 
+    }else if(num >= 6 && num <= 10){
+        cout<<"The entered number is high. Try again!\n"<<endl;
+        cout<<"Take a guess! Enter a number: ";
+        cin>>num;        
+    }else if(num < 1 || num > 10){
+        cout<<"Enter a valid number from 1 - 10: ";
+        cin>>num;
+    }else{
+        cout<<"The entered number is correct. Good guess!"<<endl;
+        break;
+    }
+    
+}while(num);
+
+cout<<"\n--------------------Lab exercise 2---------------------"<<endl;
+
+/*
+Lab Exercise B: using the concept of nested loop, write a code in C++ that can generate the following graph:
+
+image of a 2D print using nested loop 
+
+The size of the graph is a 10-by-10 graph
+
+*/
+
+int plot_size2 = 10;
+for(int row=1; row<=plot_size2; row++){
+    for(int col = 1; col<=plot_size2; col++){
+        if((col >= 3 && col <=4 && row >= 3 && row <=8) || (col >= 5 && col <=6 && row >= 7 && row <=10)||(col >=7 && col<=8 && row >=3 && row<=8)){
+            cout<<"  %  ";
+        }else{
+            cout<<"  .  ";
+        }
+
+    }
+    cout<<endl;
+
+}
 
 return 0;
 
